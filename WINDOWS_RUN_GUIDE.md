@@ -46,7 +46,17 @@ The following files should exist:
 - `data\contacts.txt`
 - `data\safe_places.txt`
 
-## 4) Build C Analyzer on Windows
+## 4) Quick Start (One Click)
+
+Double-click `run_windows.bat` in the project root. It will:
+
+1. Detect Python (via `python` or the `py` launcher)
+2. Build `analyzer.exe` from `analyzer.c` with `gcc`
+3. Verify tkinter is available
+4. Syntax-check `app.py`
+5. Launch the app
+
+## 5) Manual Build C Analyzer on Windows
 
 From project root:
 
@@ -58,7 +68,7 @@ Expected result:
 
 - `analyzer.exe` is created in project root.
 
-## 5) Python Sanity Check
+## 6) Python Sanity Check
 
 ```powershell
 python -m py_compile app.py
@@ -68,7 +78,9 @@ Expected result:
 
 - Command exits silently (no error output).
 
-## 6) Run the App
+## 7) Run the App
+
+Either double-click `run_windows.bat` or run manually:
 
 ```powershell
 python app.py
@@ -82,7 +94,7 @@ Expected runtime flow:
 4. Fill questions and run analysis
 5. Results + advice are shown
 
-## 7) First-Time Signup Flow
+## 8) First-Time Signup Flow
 
 On Sign Up tab, provide:
 
@@ -104,7 +116,7 @@ Expected after signup:
   - `safe_places.txt`
   - `sos_draft.txt`
 
-## 8) Timer Behavior (Current)
+## 9) Timer Behavior (Current)
 
 - UI slider: 10 seconds to 10 minutes
 - Input file includes:
@@ -112,7 +124,7 @@ Expected after signup:
   - `TIMER_MINUTES` (fallback)
 - C scoring uses `TIMER_SECONDS` if present, otherwise falls back to `TIMER_MINUTES`.
 
-## 9) Non-Interactive Analyzer Smoke Tests (Optional)
+## 10) Non-Interactive Analyzer Smoke Tests (Optional)
 
 Use this to verify C logic without launching GUI.
 
@@ -141,7 +153,7 @@ Expected key in output:
 
 - `RISK_SCORE=15` (timer contribution for 10-59 sec)
 
-## 10) Common Issues and Fixes
+## 11) Common Issues and Fixes
 
 ### Issue: `Analyzer not found` in app
 
@@ -177,7 +189,7 @@ Fix:
 
 - Reinstall official Python from python.org and keep Tcl/Tk option enabled.
 
-## 11) Agent Execution Checklist
+## 12) Agent Execution Checklist
 
 Use this exact sequence:
 
@@ -188,7 +200,9 @@ Use this exact sequence:
 5. Launch app: `python app.py`
 6. Confirm auth -> safety screen -> analysis output path works
 
-## 12) Notes
+Or simply run `run_windows.bat` from the project root and skip steps 2-5.
+
+## 13) Notes
 
 - No external Python packages are required.
 - This project uses local file-based storage (no DB).

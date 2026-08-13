@@ -122,7 +122,7 @@ python app.py
 ./run_mac.sh
 ```
 
-On Windows, compile the C code separately using MinGW or Visual Studio.
+On Windows, run `run_windows.bat` (one-click: builds `analyzer.exe`, verifies Python/tkinter, launches the app), or compile with MinGW and run `python app.py` manually.
 
 ---
 
@@ -133,6 +133,9 @@ shieldher/
 ├── app.py              # Main Python application
 ├── analyzer.c          # Risk calculation engine (C source)
 ├── analyzer            # Compiled risk analyzer (macOS/Linux)
+├── run_mac.sh          # One-click launcher (macOS/Linux)
+├── run_windows.bat     # One-click launcher (Windows)
+├── Makefile            # Build file for macOS/Linux
 ├── data/               # User data storage
 │   ├── users.json      # User accounts
 │   ├── contacts.txt    # Default trusted contacts
